@@ -32,7 +32,7 @@ jobs:
       run: ls -la ./build
 
     - name: Build Docker image
-      run: docker build -t mohammadbilalibrahim/github-actions .
+      run: docker build -t mohammadbilalibrahim/github-actions:01 .
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
@@ -41,7 +41,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push Docker image
-      run: docker push mohammadbilalibrahim/github-actions
+      run: docker push mohammadbilalibrahim/github-actions:01
 
     - name: Logout Docker Hub
       run: docker logout
